@@ -10,6 +10,8 @@ import NavItem from './NavItem';
 
 import { useRouter } from 'next/router';
 
+export const navbarHeight = 4;
+
 const Navbar : React.FC = () => {
 
     const router = useRouter();
@@ -22,9 +24,12 @@ const Navbar : React.FC = () => {
         <Flex
             w='100%'
             justifyContent='space-between'
+            align='center'
             px={4}
             position='fixed'
-            bottom={2}
+            bottom={0}
+            bg='white'
+            height={`${navbarHeight}rem`}
         >
             {
                 routes.map((route, index) => (

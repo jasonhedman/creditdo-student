@@ -1,12 +1,22 @@
 import React from 'react'
 
-import { Flex } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
+
+import Header from './Header'
+import Actions from './Actions'
 
 const Profile = () => {
   return (
-    <Flex>
-
-    </Flex>
+    <VStack
+      direction='column'
+      align='center'
+      justify='center'
+      spacing={8}
+      flex={1}
+    >
+      <Header />
+      <Actions />
+    </VStack>
   )
 }
 
