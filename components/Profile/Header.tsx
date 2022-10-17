@@ -14,6 +14,7 @@ const Header : React.FC = () => {
             rounded='full'
             border='4px white solid'
             mb={2}
+            alt={'avatar'}
         />
         <Text
             fontSize='2xl'
@@ -27,7 +28,7 @@ const Header : React.FC = () => {
             color='white'
             fontWeight='semibold'
         >
-            Ms. Garcia's Class
+            Ms. Garcia{'&apos;'}s Class
         </Text>
     </VStack>
   )

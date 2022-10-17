@@ -27,6 +27,7 @@ const Header : React.FC = () => {
             src={`https://api.multiavatar.com/jasonhedman.png`}
             h='80px'
             w='80px'
+            alt={'avatar'}
         />
     </HStack>
   )
