@@ -23,7 +23,7 @@ const Header : React.FC = () => {
                 Do good. Earn greatness
             </Text>
         </VStack>
-        <Image 
+        <Image
             src={`https://api.multiavatar.com/jasonhedman.png`}
             h='80px'
             w='80px'
