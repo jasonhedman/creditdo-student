@@ -7,7 +7,10 @@ import Metrics from './Metrics'
 
 const Work : React.FC = () => {
   return (
-    <Tabs isFitted>
+    <Tabs 
+        isFitted
+        colorScheme='orange'
+    >
         <TabList>
             <Tab>Events</Tab>
             <Tab>Metrics</Tab>
