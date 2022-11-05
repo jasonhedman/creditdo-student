@@ -21,7 +21,7 @@ const info: InfoProps[] = [
 
 const WorkWidget: React.FC = () => {
   return (
-    <Widget title="Work" href="https://www.google.com" bg="orange.300">
+    <Widget title="Work" href="/work" bg="orange.300">
       <HStack spacing={3}>
         {info.map((info, index) => (
           <InfoDisplay key={index} {...info} />
