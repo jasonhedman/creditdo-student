@@ -18,7 +18,7 @@ const SaveWidget : React.FC = () => {
   return (
     <Widget
         title="Save"
-        href="https://www.google.com"
+        href="/save"
         bg="green.300"
     >
       <VStack

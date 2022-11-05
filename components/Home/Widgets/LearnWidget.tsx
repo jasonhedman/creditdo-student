@@ -16,7 +16,7 @@ const LearnWidget : React.FC = () => {
   return (
     <Widget
         title="Learn"
-        href="https://www.google.com"
+        href="/learn"
         bg="pink.400"
     >
         <VStack
