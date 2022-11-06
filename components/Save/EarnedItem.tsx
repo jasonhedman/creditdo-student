@@ -12,54 +12,52 @@ interface Props {
 
 const EarnedItem: React.FC<Props> = ({company, amount, cardNumber, logo, bgColor}) => {
   return (
-    <Box>
-        <VStack>
-            <Box
-                bg={bgColor}
-                borderRadius='xl'
-                w={400}
-                h={60}
-                paddingTop='4'
-                paddingLeft='5'
+    <VStack
+        bg={bgColor}
+        borderRadius='xl'
+        w='100%'
+        p={4}
+        spacing={8}
+        alignItems='flex-start'
+    >
+        <Text
+            color='white'
+            fontSize='sm'
+            fontWeight='semibold'
+        >
+            {company}
+        </Text>
+        <VStack
+            alignItems='flex-start'
+            spacing={0}
+        >
+            <Text
+                color='white'
+                fontSize='30px'
+                fontWeight='semibold'
             >
-                <Text
-                    color='white'
-                    fontSize='sm'
-                    fontWeight='semibold'
-                >
-                    {company}
-                </Text>
-                <br />
-                <br />
-                <Text
-                    color='white'
-                    fontSize='30px'
-                    fontWeight='semibold'
-                >
-                    ${amount}
-                </Text>
-                <Text
-                    color='white'
-                    fontSize='xs'
-                >
-                    Total Balance
-                </Text>
-                <br />
-                <br />
-                <HStack
-                    spacing={200}
-                >
-                    <Text
-                        color='white'
-                        fontSize='sm'
-                    >
-                        **** **** {cardNumber.substring(8,12)} {cardNumber.substring(12,16)}
-                    </Text>
-                    <Image src={logo} />
-                </HStack>
-            </Box>
+                ${amount}
+            </Text>
+            <Text
+                color='white'
+                fontSize='xs'
+            >
+                Total Balance
+            </Text>
         </VStack>
-    </Box>
+        <HStack
+            justifyContent='space-between'
+            w='100%'
+        >
+            <Text
+                color='white'
+                fontSize='sm'
+            >
+                **** **** {cardNumber.substring(8,12)} {cardNumber.substring(12,16)}
+            </Text>
+            <Image src={logo} />
+        </HStack>
+    </VStack>
   )
 }
 

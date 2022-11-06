@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, HStack, Text } from '@chakra-ui/react'
+import { Box, HStack, Text, VStack } from '@chakra-ui/react'
 import { FaHandshake } from 'react-icons/fa'
 import { BsPiggyBankFill } from 'react-icons/bs';
 
@@ -25,7 +25,11 @@ const activities = [
 
 const Activity = () => {
   return (
-    <Box>
+    <VStack
+        w='100%'
+        spacing={4}
+        alignItems='flex-start'
+    >
         <Text
             fontSize='xl'
             color='gray'
@@ -33,10 +37,9 @@ const Activity = () => {
         >
             Activity
         </Text>
-        <br />
         <HStack
             w='100%'
-            spacing={300}
+            justifyContent={'space-between'}
         >
             {
                 activities.map((activity, index) => (
@@ -51,9 +54,7 @@ const Activity = () => {
                 ))
             }
         </HStack>
-        <br />
-        <br />
-    </Box>
+    </VStack>
   )
 }
 

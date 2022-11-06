@@ -22,7 +22,11 @@ const giftCards = [
 
 const Earned = () => {
   return (
-    <Box>
+    <VStack
+        w='100%'
+        spacing={4}
+        alignItems='flex-start'
+    >
         <Text
             fontSize='xl'
             color='gray'
@@ -30,9 +34,9 @@ const Earned = () => {
         >
             Earned $
         </Text>
-        <br />
         <VStack
             alignItems='flex-start'
+            w='100%'
         >
             {
                 giftCards.map((giftCard, index) => (
@@ -47,7 +51,7 @@ const Earned = () => {
                 ))
             }
         </VStack>
-    </Box>
+    </VStack>
   )
 }
 

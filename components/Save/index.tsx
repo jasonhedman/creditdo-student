@@ -1,15 +1,19 @@
 import React from 'react'
 
-import { Box } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import Activity from './Activity'
 import Earned from './Earned'
 
 const Save : React.FC = () => {
   return (
-    <Box>
-        <Activity />
-        <Earned />
-    </Box>
+    <Flex
+      flexDir='column'
+      w='100%'
+      gap={8}
+    >
+      <Activity />
+      <Earned />
+    </Flex>
   )
 }
 
