@@ -16,7 +16,8 @@ const Learn = () => {
 
   return (
     <Tabs isFitted
-        colorScheme="orange">
+        colorScheme="orange"
+    >
         <TabList>
             <Tab>Lessons</Tab>
             <Tab>My Goals</Tab>

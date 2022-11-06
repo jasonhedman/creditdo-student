@@ -4,7 +4,7 @@ export interface Lesson {
     id: string;
 	title: string;
 	lengthHours: number;
-    dueDate: Timestamp;
+    dueDate: Date;
 	completed: boolean;
     week: number
 }
