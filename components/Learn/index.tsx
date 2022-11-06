@@ -7,54 +7,11 @@ import { WeeklyLessons } from '../../hooks/types'
 import useLessons from '../../hooks/useLessons'
 import { Timestamp } from 'firebase/firestore'
 import LearnPage from './components/LearnPage'
+import { lessonData } from '../../data/lessons'
 
 const Learn = () => {
 
-    const weeklyLessons: WeeklyLessons[] = 
-    [
-        {
-            weekNumber: 1,
-            lessons: [
-                {
-                    id: "12341234123",
-                    title: "Lesson 1",
-                    lengthHours: 2,
-                    dueDate: Timestamp.now(),
-                    completed: true,
-                    week: 1
-                },
-                {
-                    id: "1221343412",
-                    title: "Lesson 2",
-                    lengthHours: 1,
-                    dueDate: Timestamp.now(),
-                    completed: true,
-                    week: 1
-                }
-            ]
-        },
-        {
-            weekNumber: 1,
-            lessons: [
-                {
-                    id: "12341223",
-                    title: "Lesson 3",
-                    lengthHours: 2,
-                    dueDate: Timestamp.now(),
-                    completed: true,
-                    week: 2
-                },
-                {
-                    id: "122123",
-                    title: "Lesson 4",
-                    lengthHours: 1,
-                    dueDate: Timestamp.now(),
-                    completed: false,
-                    week: 2
-                }
-            ]
-        }
-    ];
+    const weeklyLessons: WeeklyLessons[] = lessonData;
     //useLessons();
 
   return (

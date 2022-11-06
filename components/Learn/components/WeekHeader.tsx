@@ -1,5 +1,6 @@
 import React from 'react'
 import { Stack } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 
 interface Props {
     weekNumber: number;
@@ -13,11 +14,12 @@ const WeekHeader : React.FC<Props> = ({ weekNumber }) => {
         borderRadius={1}
         px={1.5}
         py={0.25}
-        sx={{
-            backgroundColor: '#f6f6f6'
-        }}
     >
+       <Heading
+       size='md'
+       >
         Week {weekNumber}
+      </Heading> 
     </Stack>
   )
 }

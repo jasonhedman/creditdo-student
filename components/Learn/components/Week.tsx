@@ -13,6 +13,8 @@ const Week: React.FC<Props> = ({weekNumber, lessons}) => {
   return (
     <VStack 
         spacing={2}
+        alignItems='left'
+        w='100%'
     >
         <WeekHeader weekNumber={weekNumber} />
         {
