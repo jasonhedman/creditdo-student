@@ -13,3 +13,13 @@ export interface WeeklyLessons {
     weekNumber: number
     lessons: Lesson[]
 }
+
+// gonna need to parse this
+export interface Goal {
+    id: string
+    title: string 
+    location: string | null
+    reason: string | null
+    dueDate: Date
+    completed: boolean
+}
