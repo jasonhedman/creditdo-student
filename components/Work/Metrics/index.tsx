@@ -1,8 +1,18 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
+import EventImpact from './EventImpact'
+import Leaderboard from './Leaderboard'
+
 
 const Metrics : React.FC = () => {
   return (
-    <div>Metrics</div>
+    <Box>
+      <EventImpact />
+      <br />
+      <br />
+      <br />
+      <Leaderboard />
+    </Box>
   )
 }
 
