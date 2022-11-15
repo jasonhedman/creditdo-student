@@ -20,6 +20,7 @@ const PastEvent : React.FC<Props> = ({ event }) => {
         <Image
             src={event.imageURL}
             roundedTop='md'
+            alt={event.title}
         />
         <VStack
             alignItems='flex-start'
