@@ -1,7 +1,10 @@
-import { Box, HStack, VStack, Text, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
 import React from 'react'
+
+import { Box, HStack, Text, Menu, MenuButton, Button, MenuList, MenuItem } from '@chakra-ui/react'
+
 import { BsPersonCircle } from 'react-icons/bs'
 import { RiArrowDropDownLine } from 'react-icons/ri'
+
 import LeaderboardItem from './LeaderboardItem'
 
 const leaderboardClasses = [
@@ -38,10 +41,17 @@ const dropdownOptionsYear = [
 ]
 
 const Leaderboard = () => {
+
+    const [currentTeacherIndex, setCurrentTeacherIndex] = React.useState<number>(0);
+    const [currentYearIndex, setCurrentYearIndex] = React.useState<number>(0);
+
     return (
-        <Box>
+        <Box
+            w='100%'
+        >
             <HStack
-                spacing='160px'
+                w='100%'
+                justifyContent='space-between'
             >
                 <Text
                     color='gray'
@@ -59,23 +69,24 @@ const Leaderboard = () => {
                             fontWeight='semibold'
                             bg='white'
                         >
-                            {dropdownOptionsTeacher[0]}
+                            {dropdownOptionsTeacher[currentTeacherIndex]}
                         </MenuButton>
                         <MenuList>
                             {
                                 dropdownOptionsTeacher.map((dropdown, index) => (
-                                    // FIX!!! This part is not working for some reason, only showing one letter
                                     <MenuItem
                                         color='cyan.500'
                                         fontWeight='semibold'
+                                        onClick={() => setCurrentTeacherIndex(index)}
+                                        key={dropdown}
                                     >
-                                        {dropdown[index]}
+                                        {dropdown}
                                     </MenuItem>
                                 ))
                             }
                         </MenuList>
                     </Menu>
-                    <Menu>
+                    {/* <Menu>
                         <MenuButton
                             as={Button}
                             rightIcon={<RiArrowDropDownLine />}
@@ -83,37 +94,30 @@ const Leaderboard = () => {
                             fontWeight='semibold'
                             bg='white'
                         >
-                            {dropdownOptionsYear[0]}
+                            {dropdownOptionsYear[currentYearIndex]}
                         </MenuButton>
                         <MenuList>
                             {
                                 dropdownOptionsYear.map((dropdown, index) => (
-                                    // FIX!!! This part is not working for some reason, only showing one letter
                                     <MenuItem
                                         color='cyan.500'
                                         fontWeight='semibold'
+                                        onClick={() => setCurrentYearIndex(index)}
+                                        key={dropdown}
                                     >
-                                        {dropdown[index]}
+                                        {dropdown}
                                     </MenuItem>
                                 ))
                             }
                         </MenuList>
-                    </Menu>
+                    </Menu> */}
                 </HStack>
             </HStack>
-            <br />
             {
                 leaderboardClasses.map((leaderboardClass, index) => (
                     <LeaderboardItem
                         key={index}
-                        teacher={leaderboardClass.teacher}
-                        pounds={leaderboardClass.pounds}
-                        money={leaderboardClass.money}
-                        meals={leaderboardClass.meals}
-                        avgCost={leaderboardClass.avgCost}
-                        icon={leaderboardClass.icon}
-                        timeFrame={leaderboardClass.timeFrame}
-                        ranking={leaderboardClass.ranking}
+                        {...leaderboardClass}
                     />
                 ))
             }
