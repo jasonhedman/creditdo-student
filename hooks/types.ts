@@ -7,6 +7,7 @@ export interface Lesson {
     dueDate: Date;
 	completed: boolean;
     week: number
+
 }
 
 export interface WeeklyLessons {
@@ -16,10 +17,18 @@ export interface WeeklyLessons {
 
 // gonna need to parse this
 export interface Goal {
+    type: string
     id: string
     title: string 
     location: string | null
     reason: string | null
     dueDate: Date
     completed: boolean
+}
+
+export interface LessonData {
+    title: string,
+    week: number,
+    id: string,
+    text: string
 }

@@ -1,4 +1,5 @@
 import { Timestamp } from "firebase/firestore";
+import { Goal, LessonData } from '../hooks/types'
 const now = new Date();
 
 export const lessonData = [
@@ -45,16 +46,10 @@ export const lessonData = [
         ]
     }
 ];
-export interface Goal {
-    id: string
-    title: string
-    location: string
-    dueDate: Date
-    completed: boolean
-}
 
-export const eventGData = [
+export var eventGData: Goal[] = [
     {
+        type: 'event',
         id: '1234234123',
         title: 'Food Drive',
         location: 'School Gym',
@@ -63,6 +58,7 @@ export const eventGData = [
         completed: false
     },
     {
+        type: 'event',
         id: '12342123',
         title: 'Book Sorting',
         reason: null,
@@ -72,8 +68,9 @@ export const eventGData = [
     },
 ]
 
-export const shortGData = [
+export var shortGData: Goal[] = [
     {
+        type: 'short',
         id: '123423434123',
         title: 'Save $60',
         reason: 'books',
@@ -82,6 +79,7 @@ export const shortGData = [
         completed: false
     },
     {
+        type: 'short',
         id: '12342334134123',
         title: 'Save $200',
         reason: 'sneakers',
@@ -91,8 +89,9 @@ export const shortGData = [
     },
 ]
 
-export const longGData = [
+export var longGData: Goal[] = [
     {
+        type: 'long',
         id: '1234234134134123',
         title: 'Save $600',
         reason: 'phone',
@@ -101,6 +100,7 @@ export const longGData = [
         completed: false
     },
     {
+        type: 'long',
         id: '12342334343343134123',
         title: 'Save $2000',
         reason: 'college',
@@ -110,13 +110,21 @@ export const longGData = [
     },
 ]
 
-export const doneGData = [
+export var doneGData: Goal[] = [
     {
+        type: 'short',
         id: '1243343134123',
         title: 'Save $10',
         reason: 'snaxs',
         location: null,
         dueDate: now,
         completed: true
-    },
+    }
 ]
+
+export const lessonDataInfo: LessonData = {
+    week: 1,
+    title: 'Week 1 - Budget',
+    id: '1234132',
+    text: "TEST TEST TEST TEST",
+}

@@ -3,11 +3,18 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { collection, CollectionReference, doc, updateDoc } from "firebase/firestore";
 
 import { Lesson } from "./types";
+import { lessonDataInfo } from "../data/learn";
+import { title } from "process";
+
 
 const useLessons = (classId : string) => {
 
-    const [lessons, loading, error] = useCollectionData<Lesson>(collection(db, "classes", classId, "lessons") as CollectionReference<Lesson>);
+   // const [lessons, loading, error] = useCollectionData<Lesson>(collection(db, "classes", classId, "lessons") as CollectionReference<Lesson>);
 
+
+    const getLessonData = (lessonId: string) => {
+        return lessonDataInfo;
+    }
 
     const partitionWeeks = (lessons: Lesson[]) => {
         const weeklyLessons: Lesson[][] = [[], []];
@@ -23,8 +30,9 @@ const useLessons = (classId : string) => {
     } 
 
     return {
-        lessons: partitionWeeks(lessons || []),
-        loading
+        //lessons: partitionWeeks(lessons || []),
+        getLessonData: (lessonId: string) => {},
+        //loading
     }
 }
 

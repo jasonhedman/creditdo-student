@@ -1,25 +1,31 @@
 import { Checkbox, HStack, VStack, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { Goal } from '../../../../hooks/types'
 
 interface Props {
-  title: string,
+  goal: Goal,
   caption: string,
-  dueDate: Date
-  done: boolean
+  onClick: (goal: Goal) => void
 }
 
-const GoalComponent: React.FC<Props> = ({title, caption, dueDate, done}) => {
-  if (!done) {
+const GoalComponent: React.FC<Props> = ({ goal, caption, onClick}) => {
+ 
+  if (!goal.completed) {
     return (
-      <Checkbox colorScheme='green' size='lg' spacing='5'>
+      <Checkbox 
+        colorScheme='green' 
+        size='lg' 
+        spacing='5'
+        isChecked={goal.completed}
+        onChange={() => onClick(goal)}
+      >
         <VStack
           spacing={0}
           alignItems='left'
         >
             <HStack spacing='1'>
-                <Text fontSize='md' as='b'>{title}</Text>
-                <Text fontSize='sm' color='gray'>{"on " + dueDate.getMonth().toString() + "/" + dueDate.getDate().toString()}</Text>
+                <Text fontSize='md' as='b'>{goal.title}</Text>
+                <Text fontSize='sm' color='gray'>{"on " + goal.dueDate.getMonth().toString() + "/" + goal.dueDate.getDate().toString()}</Text>
             </HStack>
             <Text fontSize='sm'>{caption}</Text>
         </VStack>
@@ -28,14 +34,20 @@ const GoalComponent: React.FC<Props> = ({title, caption, dueDate, done}) => {
   }
 
   return (
-    <Checkbox colorScheme='green' size='lg' spacing='5' defaultChecked>
+    <Checkbox 
+      colorScheme='green' 
+      size='lg' 
+      spacing='5'
+      onChange={() => onClick(goal)}
+      isChecked={goal.completed}
+      >
     <VStack
       spacing={0}
       alignItems='left'
     >
         <HStack spacing='1'>
-            <Text fontSize='md' as='del' color='green'>{title}</Text>
-            <Text fontSize='sm' color='green' as='del'>{"on " + dueDate.getMonth().toString() + "/" + dueDate.getDate().toString()}</Text>
+            <Text fontSize='md' as='del' color='green'>{goal.title}</Text>
+            <Text fontSize='sm' color='green' as='del'>{"on " + goal.dueDate.getMonth().toString() + "/" + goal.dueDate.getDate().toString()}</Text>
         </HStack>
         <Text fontSize='sm' color='green' as='del'>{caption}</Text>
     </VStack>

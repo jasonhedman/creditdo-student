@@ -4,12 +4,13 @@ import { Goal } from '../../../../hooks/types'
 import GoalComponent from './GoalComponent'
 
 interface Props {
-    name: String
+    name: string
     goalList: Goal[]
+    onClick: (goal: Goal) => void
 }
 
 
-const GoalsList: React.FC<Props> = ({name, goalList}) => {
+const GoalsList: React.FC<Props> = ({name, goalList, onClick}) => {
 
     const generateGoal = (goal: Goal, index: number) => {
         let caption: string = '';
@@ -20,7 +21,12 @@ const GoalsList: React.FC<Props> = ({name, goalList}) => {
             caption = 'For ' + goal.reason;
         }
         return (
-            <GoalComponent key={index} title={goal.title} dueDate={goal.dueDate} caption={caption} done={goal.completed}/>
+            <GoalComponent 
+                key={index} 
+                goal={goal}
+                caption={caption} 
+                onClick={onClick}
+            />
         )
     }
 
