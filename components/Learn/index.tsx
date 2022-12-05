@@ -3,7 +3,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { WeeklyLessons } from '../../hooks/types'
 import useGoals from '../../hooks/useGoals'
 import LearnPage from './components/Lessons/LearnPage'
-import { lessonData, eventGData, shortGData, longGData, doneGData } from '../../data/learn'
+import { lessonData } from '../../data/learn'
 import GoalsPage from './components/Goals/GoalsPage'
 
 

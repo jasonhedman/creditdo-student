@@ -1,4 +1,4 @@
-import { AddIcon, CheckIcon } from '@chakra-ui/icons'
+import { AddIcon } from '@chakra-ui/icons'
 import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Text, Input, useDisclosure, VStack, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react'
 import React, { useRef, useState } from 'react'
 import { Goal } from '../../../../hooks/types'
