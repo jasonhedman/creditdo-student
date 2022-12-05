@@ -30,7 +30,7 @@ const GoalsPage: React.FC<Props> = ({eventGoals, shortTermGoals, longTermGoals, 
   }
 
   return (
-    <VStack spacing='10'>
+    <VStack spacing='10' position='relative'>
       <GoalsList name='Event Goals' goalList={eventGoals} onClick={check}/>
       <GoalsList name='Short Term Goals' goalList={shortTermGoals} onClick={check}/>
       <GoalsList name='Long Term Goals' goalList={longTermGoals} onClick={check}/>
@@ -74,7 +74,7 @@ const GoalsPage: React.FC<Props> = ({eventGoals, shortTermGoals, longTermGoals, 
               <Input placeholder='Enter amount' />
             </InputGroup>
             <br />
-            <Text>How much money can I save per week?</Text>
+            <Text>How much money can I save?</Text>
             <InputGroup>
               <InputLeftElement
                 pointerEvents='none'
