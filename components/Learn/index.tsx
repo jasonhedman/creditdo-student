@@ -1,18 +1,16 @@
 import React from 'react'
-
-import { Flex } from '@chakra-ui/react'
-import Week from "./components/Week"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { WeeklyLessons } from '../../hooks/types'
-import useLessons from '../../hooks/useLessons'
-import { Timestamp } from 'firebase/firestore'
-import LearnPage from './components/LearnPage'
-import { lessonData } from '../../data/lessons'
+import useGoals from '../../hooks/useGoals'
+import LearnPage from './components/Lessons/LearnPage'
+import { lessonData } from '../../data/learn'
+import GoalsPage from './components/Goals/GoalsPage'
+
 
 const Learn = () => {
-
     const weeklyLessons: WeeklyLessons[] = lessonData;
-    //useLessons();
+
+    const { eventList, shortList, longList, doneList } = useGoals();
 
   return (
     <Tabs isFitted
@@ -25,6 +23,13 @@ const Learn = () => {
         <TabPanels>
             <TabPanel>
                 <LearnPage schedule={weeklyLessons}/>
+            </TabPanel>
+            <TabPanel>
+                <GoalsPage 
+                    eventGoals={eventList} 
+                    shortTermGoals={shortList} 
+                    longTermGoals={longList} 
+                    done={doneList}/>
             </TabPanel>
         </TabPanels>
     </Tabs>

@@ -12,7 +12,7 @@ const Widgets: React.FC = () => {
     <VStack spacing={8}>
       
       <LearnWidget />
-      <WorkWidget />
+      <WorkWidget/>
       <SaveWidget />
     </VStack>
   );

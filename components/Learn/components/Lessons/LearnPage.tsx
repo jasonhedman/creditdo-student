@@ -1,7 +1,7 @@
 import React from 'react'
 import { VStack } from '@chakra-ui/react'
 import Week from './Week'
-import { WeeklyLessons } from '../../../hooks/types'
+import { WeeklyLessons } from '../../../../hooks/types'
 
 interface Props {
     schedule: WeeklyLessons[]
@@ -10,7 +10,9 @@ interface Props {
 const LearnPage: React.FC<Props> = (props) => {
 
   return (
-    <VStack>
+    <VStack
+        spacing='10'
+    >
         {
             props.schedule?.map((lesson, index) => (
                 <Week 

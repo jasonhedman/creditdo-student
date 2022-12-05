@@ -12,6 +12,7 @@ interface Props {
 
 const Widget: React.FC<Props> = ({ children, title, href, bg }) => {
   return (
+    <Box w='100%'>
     <Link href={href}>
       <Flex direction="column" w="100%" gap={4} bg={bg} p={2} rounded="md">
         <Text fontSize="lg" fontWeight="bold" color="whiteAlpha.800">
@@ -22,6 +23,7 @@ const Widget: React.FC<Props> = ({ children, title, href, bg }) => {
         </Box>
       </Flex>
     </Link>
+    </Box>
   );
 };
 

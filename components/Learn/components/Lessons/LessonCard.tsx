@@ -1,7 +1,7 @@
 import React from 'react'
-import { Lesson } from '../../../hooks/types'
-import Card from '../../utility/Card'
-import { Heading, VStack, HStack, Text } from '@chakra-ui/react'
+import { Lesson } from '../../../../hooks/types'
+import Card from '../../../utility/Card'
+import { Heading, VStack, HStack, Text, Link } from '@chakra-ui/react'
 import CompletedBadge from './CompletedBadge'
 
 interface Props {

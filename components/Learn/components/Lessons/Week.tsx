@@ -2,7 +2,7 @@ import { VStack } from '@chakra-ui/react'
 import React from 'react'
 import LessonCard from "./LessonCard"
 import WeekHeader from "./WeekHeader"
-import { Lesson, WeeklyLessons } from "../../../hooks/types"
+import { Lesson, WeeklyLessons } from "../../../../hooks/types"
 
 interface Props {
     weekNumber : number;
