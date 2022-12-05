@@ -55,7 +55,10 @@ const EarnedItem: React.FC<Props> = ({company, amount, cardNumber, logo, bgColor
                     >
                         **** **** {cardNumber.substring(8,12)} {cardNumber.substring(12,16)}
                     </Text>
-                    <Image src={logo} />
+                    <Image 
+                        src={logo} 
+                        alt={company}
+                    />
                 </HStack>
             </Box>
         </VStack>
