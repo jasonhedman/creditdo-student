@@ -6,7 +6,7 @@ import Earned from './Earned'
 
 const Save : React.FC = () => {
   return (
-    <Box>
+    <Box w='100%'>
         <Activity />
         <Earned />
     </Box>

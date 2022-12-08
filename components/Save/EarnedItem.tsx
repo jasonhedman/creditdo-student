@@ -12,57 +12,79 @@ interface Props {
 
 const EarnedItem: React.FC<Props> = ({company, amount, cardNumber, logo, bgColor}) => {
   return (
-    <Box>
-        <VStack>
-            <Box
-                bg={bgColor}
-                borderRadius='xl'
-                w={400}
-                h={60}
-                paddingTop='4'
-                paddingLeft='5'
+    <VStack>
+        <Box
+            bg={bgColor}
+            borderRadius='xl'
+            w={340}
+            h={180}
+            paddingTop='4'
+            paddingLeft='5'
+        >
+            <Text
+                color='white'
+                fontSize='sm'
+                fontWeight='semibold'
             >
-                <Text
-                    color='white'
-                    fontSize='sm'
-                    fontWeight='semibold'
-                >
-                    {company}
-                </Text>
-                <br />
-                <br />
-                <Text
-                    color='white'
-                    fontSize='30px'
-                    fontWeight='semibold'
-                >
-                    ${amount}
-                </Text>
-                <Text
-                    color='white'
-                    fontSize='xs'
-                >
-                    Total Balance
-                </Text>
-                <br />
-                <br />
-                <HStack
-                    spacing={200}
-                >
+                {company}
+            </Text>
+            <br />
+            <Text
+                color='white'
+                fontSize='24px'
+                fontWeight='semibold'
+                w='50%'
+            >
+                ${amount}
+            </Text>
+            <Text
+                color='white'
+                fontSize='xs'
+                w='50%'
+            >
+                Total Balance
+            </Text>
+            <br />
+            <HStack
+            spacing={10}
+            >   
+                <HStack>
                     <Text
                         color='white'
                         fontSize='sm'
+                        w='50%'
                     >
-                        **** **** {cardNumber.substring(8,12)} {cardNumber.substring(12,16)}
+                        **** 
                     </Text>
-                    <Image 
-                        src={logo} 
-                        alt={company}
-                    />
+                    <Text
+                        color='white'
+                        fontSize='sm'
+                        w='50%'
+                    >
+                        **** 
+                    </Text>
+                    <Text
+                        color='white'
+                        fontSize='sm'
+                        w='50%'
+                    >
+                        {cardNumber.substring(8,12)} 
+                    </Text>
+                    <Text
+                        color='white'
+                        fontSize='sm'
+                        w='50%'
+                    >
+                        {cardNumber.substring(12,16)}
+                    </Text>
                 </HStack>
-            </Box>
-        </VStack>
-    </Box>
+                <Image 
+                    src={logo} 
+                    alt={company}
+                />
+            </HStack>
+        </Box>
+    </VStack>
   )
 }
 

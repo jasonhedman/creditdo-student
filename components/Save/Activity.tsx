@@ -36,7 +36,7 @@ const Activity = () => {
         <br />
         <HStack
             w='100%'
-            spacing={300}
+            justifyContent='space-between'
         >
             {
                 activities.map((activity, index) => (
