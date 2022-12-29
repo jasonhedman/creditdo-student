@@ -43,7 +43,7 @@ const Header: React.FC<Props> = ({ profilePicture, firstName, lastName, teacher 
                 color='white'
                 fontWeight='semibold'
             >
-                {teacher}'s Class
+                {teacher}{'&apos;'} Class
             </Text>
             <Drawer
                 isOpen={isOpen}
