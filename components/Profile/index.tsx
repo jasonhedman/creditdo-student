@@ -4,6 +4,7 @@ import { VStack } from '@chakra-ui/react'
 
 import Header from './Header'
 import Actions from './Actions'
+import EditProfile from './EditProfile'
 
 const Profile = () => {
   return (
@@ -16,6 +17,7 @@ const Profile = () => {
     >
       <Header />
       <Actions />
+      <EditProfile profilePicture='https://api.multiavatar.com/jasonhedman.png' firstName='Erica' lastName='Leung'/>
     </VStack>
   )
 }
