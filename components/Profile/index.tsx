@@ -17,7 +17,6 @@ const Profile = () => {
     >
       <Header />
       <Actions />
-      <EditProfile profilePicture='https://api.multiavatar.com/jasonhedman.png' firstName='Erica' lastName='Leung'/>
     </VStack>
   )
 }
